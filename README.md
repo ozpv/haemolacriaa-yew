@@ -5,6 +5,7 @@ you can preview an older version at [https://haemolacriaa.com/](https://haemolac
   
 ## how to configure
 config is work in progress, like most of the project  
+CSS file will eventually be purged  
   
 ## how to deploy
 Install rust (from [rustup](https://rustup.rs/)) 
