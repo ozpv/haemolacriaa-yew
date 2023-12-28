@@ -1,5 +1,5 @@
 # haemolacriaa
-www in rust
+www in rust  
 my personal website, written in *rust*  
 you can preview an older version at [https://haemolacriaa.com/](https://haemolacriaa.com/)  
   
