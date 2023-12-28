@@ -33,7 +33,7 @@ this can be configured in Trunk.toml (see [configuration](https://trunkrs.dev/co
 or, deploy the contents located in *dist/* to a server:  
 ```
 trunk build  
-cp dist  
+cd dist  
 scp -r ./ user@example.com:/path/to/www/.  
 ```  
 you probably have a better way, which automatically deploys it.  
