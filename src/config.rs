@@ -1,12 +1,13 @@
 use crate::types::*;
+use crate::app::Route;
 
 /* navbar section */
 
 pub const NAV_ITEMS: &'static [&'static nav::NavItem] = &[ 
-    &nav::NavItem{text: "Home", href: "/"},
-    &nav::NavItem{text: "About", href: "/about"},
-    &nav::NavItem{text: "Support", href: "/support"},
-    &nav::NavItem{text: "Privacy", href: "/privacy"},
+    &nav::NavItem{route: Route::Home, text: "Home",},
+    &nav::NavItem{route: Route::About, text: "About",},
+    &nav::NavItem{route: Route::Donate, text: "Donate",},
+    //&nav::NavItem{route: &Route::Privacy, text: "Privacy", href: "/privacy"},
 ];
 
 /* link list section */
