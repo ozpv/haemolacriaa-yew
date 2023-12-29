@@ -7,7 +7,7 @@ pub const NAV_ITEMS: &'static [&'static nav::NavItem] = &[
     &nav::NavItem{route: Route::Home, text: "Home",},
     &nav::NavItem{route: Route::About, text: "About",},
     &nav::NavItem{route: Route::Donate, text: "Donate",},
-    //&nav::NavItem{route: &Route::Privacy, text: "Privacy", href: "/privacy"},
+    //&nav::NavItem{route: Route::Privacy, text: "Privacy",},
 ];
 
 /* link list section */
