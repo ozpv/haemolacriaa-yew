@@ -4,7 +4,7 @@ my personal website, written in *rust*
 you can preview an older version at [https://haemolacriaa.com/](https://haemolacriaa.com/)  
   
 ## how to configure
-conifg settings are located in **src/config.rs**
+config settings are located in **src/config.rs**
   
 ## how to deploy
 Clone the repository and cd  
