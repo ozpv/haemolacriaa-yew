@@ -23,19 +23,19 @@ Install WebAssembly target
 rustup target add wasm32-unknown-unknown
 ```
 
-Update/install tailwindcss  
-```
-chmod +x update-tailwind
-./update-tailwind
-```
-
 ### if rustup doesn't work in zsh...
 add this to your *.zshenv* file in $HOME:  
 ```
 export PATH="$HOME/.cargo/bin/"
 ```  
 and restart your shell by signing out.  
-  
+
+Update/install tailwindcss  
+```
+chmod +x update-tailwind
+./update-tailwind
+```
+
 run it locally with:  
 ```
 trunk serve
