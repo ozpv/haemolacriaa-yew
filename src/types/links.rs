@@ -1,28 +1,26 @@
-/* u8 so max 256 streaming services... */
 pub enum StreamingService {
-    Spotify,
-    Soundcloud,
-    YouTube,
-    YouTubeMusic,
-    AppleMusic,
-    Bandcamp,
-    Amazon,
-    iTunes,
+    Spotify = 1,
+    Soundcloud = 2,
+    YouTube = 3,
+    YouTubeMusic = 4,
+    AppleMusic = 5,
+    Bandcamp = 6,
+    Amazon = 7,
+    ITunes = 8,
 }
 
-pub struct StreamingInfo {
-    pub service: u8,
-    pub service_name: String,    
-    pub url: String,
+pub struct StreamingInfo<'a> {
+    pub service: StreamingService,
+    pub service_name: &'a str,    
+    pub url: &'a str,
 }
 
-/* u8 so max 256 social media services... */
 pub enum SocialMedia {
     Instagram,
 }
 
-pub struct SocialMediaInfo {
-    pub service: u8,
-    pub service_name: String,
-    pub url: String,
+pub struct SocialMediaInfo<'a> {
+    pub service: SocialMedia,
+    pub service_name: &'a str,
+    pub url: &'a str,
 }
