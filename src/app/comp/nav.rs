@@ -1,8 +1,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::config;
-use crate::app::Route;
+use crate::{config, Route};
 
 #[function_component(Nav)]
 pub fn nav() -> Html {

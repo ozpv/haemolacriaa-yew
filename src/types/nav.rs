@@ -1,4 +1,4 @@
-use crate::app::Route;
+use crate::Route;
 
 pub struct NavItem<'a> {
     pub route: Route,

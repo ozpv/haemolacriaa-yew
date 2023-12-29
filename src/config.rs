@@ -1,5 +1,5 @@
 use crate::types::*;
-use crate::app::Route;
+use crate::Route;
 
 /* navbar section */
 
