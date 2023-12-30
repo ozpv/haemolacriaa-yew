@@ -1,6 +1,6 @@
-mod config;
 mod app;
 mod types;
+mod config;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -25,6 +25,35 @@ pub enum Route {
     NotFound,
 }
 
+pub enum Msg {
+    OnUpdate,
+}
+
+struct App;
+
+impl Component for App {
+    type Message = Msg;
+    type Properties = ();
+
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
+    }
+
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
+        match msg {
+            Msg::OnUpdate => { true },
+        }
+    }
+
+    fn view(&self, _ctx: &Context<Self>) -> Html {
+        html! {
+            <BrowserRouter>
+                <Switch<Route> render={switch} />
+            </BrowserRouter>
+        }
+    }
+}
+
 fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! { <Home /> },
@@ -32,16 +61,6 @@ fn switch(routes: Route) -> Html {
         Route::Donate => html! { <Donate /> },
         Route::Privacy => html! { <Privacy /> },
         Route::NotFound => html! { <p>{"404 Not Found"}</p> },
-        _ => todo!(),
-    }
-}
-
-#[function_component(App)]
-fn app() -> Html {
-    html! {
-        <BrowserRouter>
-            <Switch<Route> render={switch} />
-        </BrowserRouter>
     }
 }
 

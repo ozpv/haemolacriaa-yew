@@ -1,3 +1,5 @@
+use yew_icons::IconId;
+
 pub enum StreamingService {
     Spotify = 1,
     Soundcloud = 2,
@@ -15,12 +17,7 @@ pub struct StreamingInfo<'a> {
     pub url: &'a str,
 }
 
-pub enum SocialMedia {
-    Instagram,
-}
-
 pub struct SocialMediaInfo<'a> {
-    pub service: SocialMedia,
-    pub service_name: &'a str,
+    pub ico: IconId,
     pub url: &'a str,
 }

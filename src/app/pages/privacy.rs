@@ -1,13 +1,25 @@
 use yew::prelude::*;
 
 use crate::app::comp::nav::Nav;
+use crate::app::comp::foot::Foot;
 
-#[function_component(Privacy)]
-pub fn privacy() -> Html {
-    html! {
-        <>
-            <Nav />
-            <p>{"Privacy Policy"}</p>
-        < />    
+pub struct Privacy;
+
+impl Component for Privacy {
+    type Message = ();
+    type Properties = ();
+    
+    fn create(_ctx: &Context<Self>) -> Self {
+        Self
+    }
+
+    fn view(&self, _ctx: &Context<Self>) -> Html {
+        html! {
+            <>
+                <Nav />
+                <p>{"Work in progress..."}</p>
+                <Foot />
+            < />
+        }
     }
 }
