@@ -1,12 +1,13 @@
 # haemolacriaa
-www in rust  
 my personal website, written in *rust*  
-you can preview an older version at [https://haemolacriaa.com/](https://haemolacriaa.com/)  
-  
+you can preview an older, current version at [https://haemolacriaa.com/](https://haemolacriaa.com/)  
+
 ## how to configure
-config settings are located in **src/config.rs**
+config settings for frontend are located in **frontend/src/config.rs**
   
-## how to deploy
+# deploy section will be re-written soon!
+  
+<s>## how to deploy
 Clone the repository and cd  
 ```
 git clone https://github.com/ozpv/haemolacriaa.git
@@ -48,4 +49,4 @@ trunk build
 cd dist  
 scp -r ./ user@example.com:/path/to/www/.  
 ```  
-you probably have a better way, which automatically deploys it.  
+you probably have a better way, which automatically deploys it.</s>
