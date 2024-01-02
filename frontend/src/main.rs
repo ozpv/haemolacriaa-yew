@@ -5,10 +5,12 @@ mod config;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use app::pages::home::Home;
-use app::pages::about::About;
-use app::pages::donate::Donate;
-use app::pages::privacy::Privacy;
+use app::pages::{
+    home::Home,
+    about::About,
+    donate::Donate,
+    privacy::Privacy,
+};
 
 #[derive(Routable, Debug, Copy, Clone, PartialEq, Eq)]
 pub enum Route {

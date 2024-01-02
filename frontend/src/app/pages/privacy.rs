@@ -1,7 +1,9 @@
 use yew::prelude::*;
 
-use crate::app::comp::nav::Nav;
-use crate::app::comp::foot::Foot;
+use crate::app::comp::{
+    nav::Nav,
+    foot::Foot, 
+};
 
 pub struct Privacy;
 

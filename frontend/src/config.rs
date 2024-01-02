@@ -1,8 +1,10 @@
 use yew_icons::IconId;
 use const_format::formatcp;
 
-use crate::Route;
-use crate::types::*;
+use crate::{
+    Route,
+    types::*,
+};
 
 /* info section */
 
