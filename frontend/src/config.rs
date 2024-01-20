@@ -40,8 +40,16 @@ pub const NAV_ITEMS: [nav::NavItem; 3] = [
 
 /* link list section */
 
-pub const STREAMINGINFO_ITEMS: [links::StreamingInfo; 1] = [
-    links::StreamingInfo{service: links::StreamingService::Spotify, service_name: "Spotify", url: "spotify.com/"}
+const SPOTIFY_TRACK_ID: &str = "";  
+const YOUTUBE_VIDEO_ID: &str = "";  
+const SOUNDCLOUD_SONG_ID: &str = "";  
+const APPLE_MUSIC_SONG_ID: &str = "";  
+
+pub const STREAMINGINFO_ITEMS: [links::StreamingInfo; 4] = [
+    links::StreamingInfo{ico: IconId::SimpleIconsSpotify, name: "Spotify", url: formatcp!("https://open.spotify.com/track/{}", SPOTIFY_TRACK_ID)},
+    links::StreamingInfo{ico: IconId::SimpleIconsYoutube, name: "YouTube", url: formatcp!("https://www.youtube.com/watch?v={}", YOUTUBE_VIDEO_ID)},
+    links::StreamingInfo{ico: IconId::SimpleIconsSoundcloud, name: "SoundCloud", url: formatcp!("https://soundcloud.com/{}/{}", USERNAME, SOUNDCLOUD_SONG_ID)},
+    links::StreamingInfo{ico: IconId::SimpleIconsApple, name: "Apple", url: formatcp!("https://music.apple.com/{}/album/{}", APPLE_MUSIC_REGION, APPLE_MUSIC_SONG_ID)},
 ];
 
 /* footer section */

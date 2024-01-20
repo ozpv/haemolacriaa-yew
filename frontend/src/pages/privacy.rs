@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::app::comp::{
+use crate::components::{
     nav::Nav,
     foot::Foot, 
 };

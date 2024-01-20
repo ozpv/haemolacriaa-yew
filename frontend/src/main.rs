@@ -1,11 +1,12 @@
-mod app;
+mod components;
+mod pages;
 mod types;
 mod config;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use app::pages::{
+use pages::{
     home::Home,
     about::About,
     donate::Donate,

@@ -19,7 +19,7 @@ impl Component for Foot {
                 <div class={classes!("w-full", "mx-auto", "max-w-screen-xl", "p-4", "md:flex", "md:items-center", "md:justify-between",)}>
                     <span class={classes!("text-sm", "text-gray-500", "sm:text-center", "dark:text-gray-400",)}>{"Copyleft (ɔ) 2023-2024 "}
                         <a href={"/"} class={classes!("hover:underline",)}>{"haemolacriaa"}</a>{". All Wrongs Reserved."}</span>
-                    <ul class={classes!("flex", "flex-wrap", "items-center", "mt-3", "text-sm", "font-medium", "text-gray-500", "dark:text-gray-400", "sm:mt-0", "gap-[4vw]",)}>
+                    <nav class={classes!("flex", "flex-wrap", "items-center", "mt-3", "text-sm", "font-medium", "text-gray-500", "dark:text-gray-400", "sm:mt-0", "gap-[4vw]",)}>
                         {
                             config::SOCIALMEDIAINFO_ITEMS.into_iter().map(|item| {
                                 html! {
@@ -27,7 +27,7 @@ impl Component for Foot {
                                 }
                             }).collect::<Html>()
                         }
-                    </ul>
+                    </nav>
                 </div>
             </footer>
         }
