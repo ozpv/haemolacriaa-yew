@@ -13,7 +13,7 @@ pub fn home() -> Html {
         <>
             <Nav/>
                 <body>
-                    <StreamingLinkList song_info={EURYDICE_SONG.build_songinfo()} id=""/>
+                    <StreamingLinkList song_info={EURYDICE_SONG.build_songinfo()} image={EURYDICE_SONG.image.build_image()} id="streaming-link-list"/>
                 </body> 
             <Foot/>
         </>

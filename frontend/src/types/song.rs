@@ -1,10 +1,14 @@
-use crate::types::links::StreamingInfo;
+use crate::types::{
+    images::{Image, ConstImage},
+    links::StreamingInfo,
+};
 use crate::config::{SongId, STREAMING_PLATFORMS};
 
 #[derive(Clone)]
 pub struct ConstSongInfo<'a> {
     pub name: &'a str,
     pub author: &'a str,
+    pub image: ConstImage<'a>,
     pub id: SongId,
     pub spotify_track_id: &'a str,
     pub youtube_video_id: &'a str,
@@ -17,6 +21,7 @@ impl ConstSongInfo<'_> {
         SongInfo {
             name: self.name.to_owned(),
             author: self.author.to_owned(),
+            image: self.image.build_image().clone(),
             id: self.id.clone(),
             spotify_track_id: self.spotify_track_id.to_owned(),
             youtube_video_id: self.youtube_video_id.to_owned(),
@@ -28,13 +33,14 @@ impl ConstSongInfo<'_> {
 
 #[derive(PartialEq, Clone)]
 pub struct SongInfo {
-    name: String,
-    author: String,
-    id: SongId,
-    spotify_track_id: String,
-    youtube_video_id: String,
-    soundcloud_song_id: String,
-    apple_music_song_id: String,
+    pub name: String,
+    pub author: String,
+    pub image: Image,
+    pub id: SongId,
+    pub spotify_track_id: String,
+    pub youtube_video_id: String,
+    pub soundcloud_song_id: String,
+    pub apple_music_song_id: String,
 }
 
 impl SongInfo {

@@ -50,10 +50,16 @@ pub enum SongId {
     Eurydice,
 }
 
+const EURYDICE_COVER: images::ConstImage = images::ConstImage {
+    filename: "img/eurydice.webp",
+    width: 400,
+    height: 400,
+};
 
 pub const EURYDICE_SONG: song::ConstSongInfo = song::ConstSongInfo {
     name: "eurydice",
     author: USERNAME,
+    image: EURYDICE_COVER,
     id: SongId::Eurydice,
     spotify_track_id: "3jVgwiRUrfanloK2E1peWf",
     youtube_video_id: "_qF4fSIdNqs",
