@@ -4,11 +4,22 @@ use yew_icons::Icon;
 use crate::types::{
     images::Image,
     song::SongInfo,
+    links::SocialMediaInfo,
 };
 use crate::components::buttons::LinkButton;
 
 #[derive(PartialEq, Properties)]
-pub struct Props {
+pub struct AppendixProps {
+    socialmedia_info: SocialMediaInfo,
+}
+
+#[function_component(Appendix)]
+pub fn appendix(props: &AppendixProps) -> Html {
+    html! {
+        <nav id="social-media-links">
+            <a class="flex justify-center hover:text-rose-500 p-[16px]" href={props.socialmedia_info.url.clone()}><Icon icon_id={props.socialmedia_info.ico.clone()} width={"16"} height={"16"} /></a>
+        </nav>
+    }
 }
 
 #[derive(PartialEq, Properties)]
@@ -16,6 +27,10 @@ pub struct StreamingLinkListProps {
     pub song_info: SongInfo,
     pub image: Image,
     pub id: String,  
+    #[prop_or_default]
+    pub appendix: bool,
+    #[prop_or_default]
+    pub appendix_info: SocialMediaInfo,
 }
 
 #[function_component(StreamingLinkList)]
@@ -29,13 +44,16 @@ pub fn streaming_link_list(props: &StreamingLinkListProps) -> Html {
                     {
                         props.song_info.build_streaminginfo().into_iter().map(|item| {
                             html! {
-                                <LinkButton class="flex justify-center text-center mt-[16px] p-[20px] rounded-lg w-80 bg-blue-700 hover:text-rose-500" href={item.song_url} id="link-button">
+                                <LinkButton class="flex justify-center" href={item.song_url} id={format!("{}{}", {props.song_info.name.clone()}, "-link-button")}>
                                     <Icon icon_id={item.platform_ico} width={"24"} height={"24"} />
                                     <p class="pl-4">{item.platform_name}</p>
                                 </LinkButton>
                             }
                         }).collect::<Html>()
                     }
+                    if props.appendix.clone() {
+                        <Appendix socialmedia_info={props.appendix_info.clone()} />
+                    } 
                 </nav>
             </div>
         </div> 

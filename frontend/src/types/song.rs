@@ -51,10 +51,10 @@ impl SongInfo {
             song_name: self.name.clone(),
             song_url: {
                 match platform.name as &str {
-                    "Spotify" => { format!("{}{}", platform.base_song_url.to_owned(), self.spotify_track_id.clone()) },
-                    "YouTube" => { format!("{}{}", platform.base_song_url.to_owned(), self.youtube_video_id.clone()) },
-                    "SoundCloud" => { format!("{}{}", platform.base_song_url.to_owned(), self.soundcloud_song_id.clone()) },
-                    "Apple" => { format!("{}{}", platform.base_song_url.to_owned(), self.apple_music_song_id.clone()) },
+                    "Spotify" => { format!("{}{}", platform.base_song_url.to_owned(), self.spotify_track_id) },
+                    "YouTube" => { format!("{}{}", platform.base_song_url.to_owned(), self.youtube_video_id) },
+                    "SoundCloud" => { format!("{}{}", platform.base_song_url.to_owned(), self.soundcloud_song_id) },
+                    "Apple" => { format!("{}{}", platform.base_song_url.to_owned(), self.apple_music_song_id) },
                     _ => { "/".to_owned() },
                 }
             },

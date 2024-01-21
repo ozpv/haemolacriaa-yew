@@ -80,10 +80,10 @@ pub const STREAMING_PLATFORMS: [links::StreamingPlatform; 4] = [
  * into yew_icons' features inside Cargo.toml.
  */
 
-pub const SOCIALMEDIAINFO_ITEMS: [links::SocialMediaInfo; 5] = [
-    links::SocialMediaInfo {ico: IconId::SimpleIconsApple, url: formatcp!("https://music.apple.com/{}/artist/{}", APPLE_MUSIC_REGION, APPLE_MUSIC_ID)},
-    links::SocialMediaInfo {ico: IconId::SimpleIconsSoundcloud, url: formatcp!("https://soundcloud.com/{}", USERNAME)},
-    links::SocialMediaInfo {ico: IconId::SimpleIconsYoutube, url: formatcp!("https://youtube.com/channel/{}", YOUTUBE_CHANNEL_ID)},
-    links::SocialMediaInfo {ico: IconId::SimpleIconsInstagram, url: formatcp!("https://instagram.com/{}", USERNAME)},
-    links::SocialMediaInfo {ico: IconId::SimpleIconsSpotify, url: formatcp!("https://open.spotify.com/artist/{}", SPOTIFY_ARTIST_ID)},
+pub const SOCIALMEDIAINFO_ITEMS: [links::ConstSocialMediaInfo; 5] = [
+    links::ConstSocialMediaInfo {ico: IconId::SimpleIconsApple, url: formatcp!("https://music.apple.com/{}/artist/{}", APPLE_MUSIC_REGION, APPLE_MUSIC_ID)},
+    links::ConstSocialMediaInfo {ico: IconId::SimpleIconsSoundcloud, url: formatcp!("https://soundcloud.com/{}", USERNAME)},
+    links::ConstSocialMediaInfo {ico: IconId::SimpleIconsYoutube, url: formatcp!("https://youtube.com/channel/{}", YOUTUBE_CHANNEL_ID)},
+    links::ConstSocialMediaInfo {ico: IconId::SimpleIconsInstagram, url: formatcp!("https://instagram.com/{}", USERNAME)},
+    links::ConstSocialMediaInfo {ico: IconId::SimpleIconsSpotify, url: formatcp!("https://open.spotify.com/artist/{}", SPOTIFY_ARTIST_ID)},
 ];
