@@ -32,24 +32,40 @@ const YOUTUBE_CHANNEL_ID: &str = "UCQDQqA9iaWtlNkwXiCQogYQ";
 /* navbar section */
 
 pub const NAV_ITEMS: [nav::NavItem; 3] = [ 
-    nav::NavItem{route: Route::Home, text: "Home",},
-    nav::NavItem{route: Route::About, text: "About",},
-    nav::NavItem{route: Route::Donate, text: "Donate",},
+    nav::NavItem {route: Route::Home, text: "Home",},
+    nav::NavItem {route: Route::About, text: "About",},
+    nav::NavItem {route: Route::Donate, text: "Donate",},
     //&nav::NavItem{route: Route::Privacy, text: "Privacy",},
 ];
 
 /* link list section */
 
-const SPOTIFY_TRACK_ID: &str = "";  
-const YOUTUBE_VIDEO_ID: &str = "";  
-const SOUNDCLOUD_SONG_ID: &str = "";  
-const APPLE_MUSIC_SONG_ID: &str = "";  
+#[derive(PartialEq, Clone)]
+pub enum SongId {
+    Serene,
+    Still,
+    Stay,
+    HorrorVacui,
+    ThusFar,
+    Eurydice,
+}
 
-pub const STREAMINGINFO_ITEMS: [links::StreamingInfo; 4] = [
-    links::StreamingInfo{ico: IconId::SimpleIconsSpotify, name: "Spotify", url: formatcp!("https://open.spotify.com/track/{}", SPOTIFY_TRACK_ID)},
-    links::StreamingInfo{ico: IconId::SimpleIconsYoutube, name: "YouTube", url: formatcp!("https://www.youtube.com/watch?v={}", YOUTUBE_VIDEO_ID)},
-    links::StreamingInfo{ico: IconId::SimpleIconsSoundcloud, name: "SoundCloud", url: formatcp!("https://soundcloud.com/{}/{}", USERNAME, SOUNDCLOUD_SONG_ID)},
-    links::StreamingInfo{ico: IconId::SimpleIconsApple, name: "Apple", url: formatcp!("https://music.apple.com/{}/album/{}", APPLE_MUSIC_REGION, APPLE_MUSIC_SONG_ID)},
+
+pub const EURYDICE_SONG: song::ConstSongInfo = song::ConstSongInfo {
+    name: "eurydice",
+    author: USERNAME,
+    id: SongId::Eurydice,
+    spotify_track_id: "3jVgwiRUrfanloK2E1peWf",
+    youtube_video_id: "_qF4fSIdNqs",
+    soundcloud_song_id: "eurydice",
+    apple_music_song_id: "1707755091",
+};
+
+pub const STREAMING_PLATFORMS: [links::StreamingPlatform; 4] = [
+    links::StreamingPlatform {ico: IconId::SimpleIconsSpotify, name: "Spotify", base_song_url: "https://open.spotify.com/track/"},
+    links::StreamingPlatform {ico: IconId::SimpleIconsYoutube, name: "YouTube", base_song_url: "https://www.youtube.com/watch?v="},
+    links::StreamingPlatform {ico: IconId::SimpleIconsSoundcloud, name: "SoundCloud", base_song_url: formatcp!("https://soundcloud.com/{}/", USERNAME)},
+    links::StreamingPlatform {ico: IconId::SimpleIconsApple, name: "Apple", base_song_url: formatcp!("https://music.apple.com/{}/album/", APPLE_MUSIC_REGION)},
 ];
 
 /* footer section */
@@ -59,9 +75,9 @@ pub const STREAMINGINFO_ITEMS: [links::StreamingInfo; 4] = [
  */
 
 pub const SOCIALMEDIAINFO_ITEMS: [links::SocialMediaInfo; 5] = [
-    links::SocialMediaInfo{ico: IconId::SimpleIconsApple, url: formatcp!("https://music.apple.com/{}/artist/{}", APPLE_MUSIC_REGION, APPLE_MUSIC_ID)},
-    links::SocialMediaInfo{ico: IconId::SimpleIconsSoundcloud, url: formatcp!("https://soundcloud.com/{}", USERNAME)},
-    links::SocialMediaInfo{ico: IconId::SimpleIconsYoutube, url: formatcp!("https://youtube.com/channel/{}", YOUTUBE_CHANNEL_ID)},
-    links::SocialMediaInfo{ico: IconId::SimpleIconsInstagram, url: formatcp!("https://instagram.com/{}", USERNAME)},
-    links::SocialMediaInfo{ico: IconId::SimpleIconsSpotify, url: formatcp!("https://open.spotify.com/artist/{}", SPOTIFY_ARTIST_ID)},
+    links::SocialMediaInfo {ico: IconId::SimpleIconsApple, url: formatcp!("https://music.apple.com/{}/artist/{}", APPLE_MUSIC_REGION, APPLE_MUSIC_ID)},
+    links::SocialMediaInfo {ico: IconId::SimpleIconsSoundcloud, url: formatcp!("https://soundcloud.com/{}", USERNAME)},
+    links::SocialMediaInfo {ico: IconId::SimpleIconsYoutube, url: formatcp!("https://youtube.com/channel/{}", YOUTUBE_CHANNEL_ID)},
+    links::SocialMediaInfo {ico: IconId::SimpleIconsInstagram, url: formatcp!("https://instagram.com/{}", USERNAME)},
+    links::SocialMediaInfo {ico: IconId::SimpleIconsSpotify, url: formatcp!("https://open.spotify.com/artist/{}", SPOTIFY_ARTIST_ID)},
 ];
