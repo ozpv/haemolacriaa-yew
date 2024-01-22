@@ -44,7 +44,7 @@ pub fn streaming_link_list(props: &StreamingLinkListProps) -> Html {
                     {
                         props.song_info.build_streaminginfo().into_iter().map(|item| {
                             html! {
-                                <LinkButton class="flex justify-center" href={item.song_url} id={format!("{}{}", {props.song_info.name.clone()}, "-link-button")}>
+                                <LinkButton class="text-white p-[20px] w-80" href={item.song_url} id={format!("{}{}", {props.song_info.name.clone()}, "-link-button")}>
                                     <Icon icon_id={item.platform_ico} width={"24"} height={"24"} />
                                     <p class="pl-4">{item.platform_name}</p>
                                 </LinkButton>
@@ -59,13 +59,3 @@ pub fn streaming_link_list(props: &StreamingLinkListProps) -> Html {
         </div> 
     }
 }
-
-/*
-#[function_component(LinkList)]
-pub fn link_list(props: &Props) -> Html {
-    match props.list_type.clone() {
-        ListType::Streaming => html! { <StreamingLinkList song_info={props.song_info.clone()} id="streaming-link-list" /> },
-        _ => html! { <p>{"Error: list not found."}</p> }
-    }
-}
-*/
