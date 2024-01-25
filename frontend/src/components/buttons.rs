@@ -38,7 +38,7 @@ impl Component for LinkButton {
         
         html! {
             <>
-                <a class={"relative flex items-center justify-center p-0.5 mb-2 me-2 mt-2 rounded-lg group bg-gradient-to-br from-yellow-950 to-yellow-900 group-hover:from-yellow-950 group-hover:to-yellow-900"} href={ctx.props().href.clone()} id={ctx.props().id.clone()}>
+                <a class={"relative flex items-center justify-center p-0.5 mt-[10px] rounded-lg group bg-gradient-to-br from-yellow-950 to-blue-900 group-hover:from-yellow-950 group-hover:to-blue-900"} href={ctx.props().href.clone()} id={ctx.props().id.clone()}>
                     <span class={classes!(ctx.props().class.clone(), "relative", "flex", "justify-center", "transition-all", "ease-in", "duration-75", "bg-gray-900", "rounded-md", "group-hover:bg-opacity-0",)}>
                         { ctx.props().children.clone() }
                     </span>

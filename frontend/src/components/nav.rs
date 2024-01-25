@@ -33,20 +33,20 @@ impl Component for Nav {
         let isactive = if nav_listview { "hidden" } else { "" };
 
         html! {
-            <nav class="bg-stone-900 border-stone-200">
+            <nav class="bg-gray-900 border-gray-200">
                 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <span class="flex items-center text-xl text-white">{"haemolacriaa"}</span>
-                    <button onclick={ctx.link().callback(|_| NavMsg::UpdateNavListView)} class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-stone-500 md:hidden" aria-controls="navbar-default" aria-expanded="false">
+                    <button onclick={ctx.link().callback(|_| NavMsg::UpdateNavListView)} class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 md:hidden">
                         if nav_listview { <Icon icon_id={IconId::BootstrapList} width={"32"} height={"32"} /> }
                         else { <Icon icon_id={IconId::BootstrapXLg} width={"32"} height={"32"} /> }
                     </button>
 
                     <div class={classes!("w-full", "md:block", "md:w-auto", isactive)} id="navbar-default">
-                        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-stone-100 bg-stone-500 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-stone-900">
+                        <ul class="font-medium flex flex-col p-[16px] md:p-0 mt-4 border border-gray-950 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-900">
                             {
                                 config::NAV_ITEMS.into_iter().map(|item| {
                                     html! {
-                                        <li><Link<Route> to={item.route} classes="text-white hover:text-blue-700">{item.text}</Link<Route>></li>
+                                        <li class="p-[8px]"><Link<Route> to={item.route} classes="text-white py-[10px] px-[10px] rounded hover:bg-gray-800 md:hover:text-blue-900 md:hover:bg-transparent">{item.text}</Link<Route>></li>
                                     }
                                 }).collect::<Html>()
                             }

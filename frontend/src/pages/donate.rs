@@ -1,27 +1,19 @@
 use yew::prelude::*;
 
 use crate::components::{
-    nav::Nav,
+    nav::Nav, 
     foot::Foot,
 };
 
-pub struct Donate;
-
-impl Component for Donate {
-    type Message = ();
-    type Properties = ();
-    
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <>
-                <Nav />
-                <p>{"Work in progress..."}</p>
-                <Foot />
-            < />
-        }
+#[function_component(Donate)]
+pub fn page_donate() -> Html {
+    html! {
+        <>
+            <Nav />
+            <body class="bg-gray-900 min-h-screen">
+                <p class="text-white">{"Coming soon..."}</p>
+            </body> 
+            <Foot />
+        </>
     }
 }

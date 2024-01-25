@@ -1,27 +1,19 @@
 use yew::prelude::*;
 
 use crate::components::{
-    nav::Nav,
-    foot::Foot, 
+    nav::Nav, 
+    foot::Foot,
 };
 
-pub struct Privacy;
-
-impl Component for Privacy {
-    type Message = ();
-    type Properties = ();
-    
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <>
-                <Nav />
-                <p>{"Work in progress..."}</p>
-                <Foot />
-            < />
-        }
+#[function_component(Privacy)]
+pub fn page_privacy() -> Html {
+    html! {
+        <>
+            <Nav />
+            <body class="bg-gray-900 min-h-screen">
+                <p class="text-white">{"Coming soon..."}</p>
+            </body> 
+            <Foot />
+        </>
     }
 }

@@ -8,7 +8,7 @@ pub struct ConstImage<'a> {
 impl ConstImage<'_> {
     pub fn build_image(&self) -> Image {
         Image {
-            path: { format!("{}{}", "img/", self.filename.to_owned()).into() },
+            path: self.filename.to_owned(),
             width: self.width.to_string(),
             height: self.height.to_string(),
         }

@@ -31,11 +31,10 @@ const YOUTUBE_CHANNEL_ID: &str = "UCQDQqA9iaWtlNkwXiCQogYQ";
 
 /* navbar section */
 
-pub const NAV_ITEMS: [nav::NavItem; 3] = [ 
+pub const NAV_ITEMS: [nav::NavItem; 1] = [ 
     nav::NavItem {route: Route::Home, text: "Home",},
-    nav::NavItem {route: Route::About, text: "About",},
-    nav::NavItem {route: Route::Donate, text: "Donate",},
-    //&nav::NavItem{route: Route::Privacy, text: "Privacy",},
+    //nav::NavItem {route: Route::About, text: "About",},
+    //nav::NavItem {route: Route::Donate, text: "Donate",},
 ];
 
 /* link list section */

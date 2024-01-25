@@ -1,27 +1,19 @@
 use yew::prelude::*;
 
 use crate::components::{
-    nav::Nav,
+    nav::Nav, 
     foot::Foot,
 };
 
-pub struct About;
-
-impl Component for About {
-    type Message = ();
-    type Properties = ();
-    
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
-    }
-
-    fn view(&self, _ctx: &Context<Self>) -> Html {
-        html! {
-            <>
-                <Nav />
-                <p>{"Work in progress..."}</p>
-                <Foot />
-            < />
-        }
+#[function_component(About)]
+pub fn page_about() -> Html {
+    html! {
+        <>
+            <Nav />
+            <body class="bg-gray-900 min-h-screen">
+                <p class="text-white">{"Coming soon..."}</p>
+            </body> 
+            <Foot />
+        </>
     }
 }

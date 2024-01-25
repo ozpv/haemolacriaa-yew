@@ -19,13 +19,13 @@ async fn main() -> std::io::Result<()> {
             )
             .service(
                 spa()
-                .index_file("./dist/index.html")
+                .index_file("/var/www/htdocs/index.html")
                 .static_resources_mount("/")
-                .static_resources_location("./dist/")
+                .static_resources_location("/var/www/htdocs/")
                 .finish()
             )
     })
-    .bind(("0.0.0.0", 80))?
+    .bind(("0.0.0.0", 8000))?
     .run()
     .await
 }
