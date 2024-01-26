@@ -6,4 +6,5 @@ edition = "2021"
 [dependencies]
 actix-web = "4.4.1"
 actix-web-lab = { version = "0.20.1", features = ["spa"] }
+frontend = { path = "../frontend" }
 common = { path = "../common" }
