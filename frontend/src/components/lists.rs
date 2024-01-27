@@ -1,12 +1,8 @@
 use yew::prelude::*;
 use yew_icons::Icon;
 
-use crate::types::{
-    images::Image,
-    song::SongInfo,
-    links::SocialMediaInfo,
-};
 use crate::components::buttons::LinkButton;
+use crate::types::{images::Image, links::SocialMediaInfo, song::SongInfo};
 
 #[derive(PartialEq, Properties)]
 pub struct AppendixProps {
@@ -28,7 +24,7 @@ pub fn appendix(props: &AppendixProps) -> Html {
 pub struct StreamingLinkListProps {
     pub song_info: SongInfo,
     pub image: Image,
-    pub id: String,  
+    pub id: String,
     #[prop_or(false)]
     pub appendix: bool,
     #[prop_or_default]
@@ -59,6 +55,6 @@ pub fn streaming_link_list(props: &StreamingLinkListProps) -> Html {
             if props.appendix.clone() {
                 <Appendix socialmedia_info={props.appendix_info.clone()} />
             }
-        </div> 
+        </div>
     }
 }

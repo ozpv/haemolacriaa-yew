@@ -1,17 +1,12 @@
 mod components;
+mod config;
 mod pages;
 mod types;
-mod config;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use pages::{
-    home::Home,
-    about::About,
-    donate::Donate,
-    privacy::Privacy,
-};
+use pages::{about::About, donate::Donate, home::Home, privacy::Privacy};
 
 #[derive(Routable, Debug, Copy, Clone, PartialEq, Eq)]
 pub enum Route {
@@ -44,7 +39,7 @@ impl Component for App {
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::OnUpdate => { true },
+            Msg::OnUpdate => true,
         }
     }
 

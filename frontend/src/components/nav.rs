@@ -15,16 +15,17 @@ pub struct Nav {
 impl Component for Nav {
     type Message = NavMsg;
     type Properties = ();
-    
+
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            nav_listview: true,
-        }
+        Self { nav_listview: true }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            NavMsg::UpdateNavListView => { self.nav_listview = !self.nav_listview; true },
+            NavMsg::UpdateNavListView => {
+                self.nav_listview = !self.nav_listview;
+                true
+            }
         }
     }
 
@@ -46,7 +47,7 @@ impl Component for Nav {
                             {
                                 config::NAV_ITEMS.into_iter().map(|item| {
                                     html! {
-                                        <li class="p-[8px]"><Link<Route> to={item.route} classes="text-white py-[10px] px-[10px] rounded hover:bg-gray-800 md:hover:text-blue-900 md:hover:bg-transparent">{item.text}</Link<Route>></li>
+                                        <li class="p-[8px]"><Link<Route> to={item.route} classes="text-white py-[10px] px-[10px] rounded hover:bg-gray-800 md:hover:gradient-link md:hover:text-transparent md:hover:animate-gradient md:hover:bg-transparent">{item.text}</Link<Route>></li>
                                     }
                                 }).collect::<Html>()
                             }

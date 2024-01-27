@@ -2,10 +2,13 @@
 target = "index.html"
 dist = "./dist"
 
+[serve]
+port = 8001
+
 [[hooks]]
 stage = "pre_build"
 command = "./tailwindcss-linux-x64"
 command_arguments = ["-i", "./static/tailwind-gen.css", "-o", "./static/tailwind.css",]
 
 [[proxy]]
-backend = "http://localhost:80/api"
+backend = "http://localhost:8000/api"

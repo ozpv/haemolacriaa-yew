@@ -1,9 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::{
-    nav::Nav, 
-    foot::Foot,
-};
+use crate::components::{foot::Foot, nav::Nav};
 
 #[function_component(About)]
 pub fn page_about() -> Html {
@@ -12,7 +9,7 @@ pub fn page_about() -> Html {
             <Nav />
             <body class="bg-gray-900 min-h-screen">
                 <p class="text-white">{"Coming soon..."}</p>
-            </body> 
+            </body>
             <Foot />
         </>
     }

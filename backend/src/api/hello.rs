@@ -1,7 +1,4 @@
-use actix_web::{
-    get,
-    web::Json,
-};
+use actix_web::{get, web::Json};
 
 #[get("/test")]
 pub async fn hello() -> Json<String> {

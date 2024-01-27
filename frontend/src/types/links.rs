@@ -10,7 +10,7 @@ pub struct StreamingInfo {
 
 pub struct StreamingPlatform<'a> {
     pub ico: IconId,
-    pub name: &'a str,    
+    pub name: &'a str,
     pub base_song_url: &'a str,
 }
 

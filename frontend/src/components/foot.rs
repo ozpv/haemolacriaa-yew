@@ -21,7 +21,7 @@ pub fn foot() -> Html {
                 </div>
                 <hr class="my-[16px] border-gray-800 mx-auto w-full md:w-[70%] md:my-[20px]" />
                 <span class="block pb-[20px] justify-center text-center text-xs text-gray-500 md:pb-[16px]">{"Copyleft (ɔ) 2023-2024 "}
-                    <a href={"/"} class="hover:text-blue-900 hover:underline">{"haemolacriaa"}</a>{". All Wrongs Reserved."}
+                    <a href={"/"} class="hover:underline hover:gradient-link hover:text-transparent hover:animate-gradient">{"haemolacriaa"}</a>{". All Wrongs Reserved."}
                 </span>
             </div>
         </footer>

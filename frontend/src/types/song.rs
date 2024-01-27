@@ -1,8 +1,8 @@
+use crate::config::{SongId, STREAMING_PLATFORMS};
 use crate::types::{
-    images::{Image, ConstImage},
+    images::{ConstImage, Image},
     links::StreamingInfo,
 };
-use crate::config::{SongId, STREAMING_PLATFORMS};
 
 #[derive(Clone)]
 pub struct ConstSongInfo<'a> {
@@ -45,19 +45,46 @@ pub struct SongInfo {
 
 impl SongInfo {
     pub fn build_streaminginfo(&self) -> Vec<StreamingInfo> {
-        STREAMING_PLATFORMS.into_iter().map(|platform| StreamingInfo {
-            platform_ico: platform.ico,
-            platform_name: platform.name.to_owned(),
-            song_name: self.name.clone(),
-            song_url: {
-                match platform.name as &str {
-                    "Spotify" => { format!("{}{}", platform.base_song_url.to_owned(), self.spotify_track_id) },
-                    "YouTube" => { format!("{}{}", platform.base_song_url.to_owned(), self.youtube_video_id) },
-                    "SoundCloud" => { format!("{}{}", platform.base_song_url.to_owned(), self.soundcloud_song_id) },
-                    "Apple" => { format!("{}{}", platform.base_song_url.to_owned(), self.apple_music_song_id) },
-                    _ => { "/".to_owned() },
-                }
-            },
-        }).collect::<Vec<StreamingInfo>>()
+        STREAMING_PLATFORMS
+            .into_iter()
+            .map(|platform| StreamingInfo {
+                platform_ico: platform.ico,
+                platform_name: platform.name.to_owned(),
+                song_name: self.name.clone(),
+                song_url: {
+                    match platform.name as &str {
+                        "Spotify" => {
+                            format!(
+                                "{}{}",
+                                platform.base_song_url.to_owned(),
+                                self.spotify_track_id
+                            )
+                        }
+                        "YouTube" => {
+                            format!(
+                                "{}{}",
+                                platform.base_song_url.to_owned(),
+                                self.youtube_video_id
+                            )
+                        }
+                        "SoundCloud" => {
+                            format!(
+                                "{}{}",
+                                platform.base_song_url.to_owned(),
+                                self.soundcloud_song_id
+                            )
+                        }
+                        "Apple" => {
+                            format!(
+                                "{}{}",
+                                platform.base_song_url.to_owned(),
+                                self.apple_music_song_id
+                            )
+                        }
+                        _ => "/".to_owned(),
+                    }
+                },
+            })
+            .collect::<Vec<StreamingInfo>>()
     }
-} 
+}

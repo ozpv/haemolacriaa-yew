@@ -21,21 +21,22 @@ impl Component for LinkButton {
     type Properties = LinkButtonProps;
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            is_hovering: true,
-        }
+        Self { is_hovering: true }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            LinkButtonMsg::UpdateIsHovering => { self.is_hovering = !self.is_hovering; true },
+            LinkButtonMsg::UpdateIsHovering => {
+                self.is_hovering = !self.is_hovering;
+                true
+            }
         }
     }
-    
+
     fn view(&self, ctx: &Context<Self>) -> Html {
         let Self { is_hovering, .. } = *self;
         let onhover = if is_hovering { "" } else { "" };
-        
+
         html! {
             <>
                 <a class={"relative flex items-center justify-center p-0.5 mt-[10px] rounded-lg group bg-gradient-to-br from-yellow-950 to-blue-900 group-hover:from-yellow-950 group-hover:to-blue-900"} href={ctx.props().href.clone()} id={ctx.props().id.clone()}>
