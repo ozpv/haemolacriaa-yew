@@ -36,14 +36,14 @@ pub fn streaming_link_list(props: &StreamingLinkListProps) -> Html {
     html! {
         <div id={props.id.clone()}>
             <img class="block mx-auto pt-[16px] shadow-2xl" src={props.song_info.image.path.clone()} width={props.song_info.image.width.clone()} height={props.song_info.image.height.clone()} alt={props.song_info.name.clone()} />
-            <h1 class="block text-white text-center text-3xl font-bold pt-[36px]">{props.song_info.name.clone()}</h1>
-            <h2 class="block text-white-800 text-center text-lg font-medium pt-[16px] pb-[10px]">{props.song_info.author.clone()}</h2>
+            <h1 class="block text-white text-center text-3xl font-bold font-sans pt-[36px]">{props.song_info.name.clone()}</h1>
+            <h2 class="block text-white-800 text-center text-lg font-medium font-sans pt-[16px] pb-[10px]">{props.song_info.author.clone()}</h2>
             <div class="flex justify-center">
                 <nav id="streaming-links">
                     {
                         props.song_info.build_streaminginfo().into_iter().map(|item| {
                             html! {
-                                <LinkButton class="text-white pt-[20px] pb-[20px] w-80" href={item.song_url} id={format!("{}{}", {props.song_info.name.clone()}, "-link-button")}>
+                                <LinkButton class="text-white text-md font-sans pt-[20px] pb-[20px] w-80" href={item.song_url} id={format!("{}{}", {props.song_info.name.clone()}, "-link-button")}>
                                     <Icon icon_id={item.platform_ico} width={"24"} height={"24"} />
                                     <p class="pl-4">{item.platform_name}</p>
                                 </LinkButton>
