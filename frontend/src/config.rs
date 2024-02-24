@@ -28,12 +28,15 @@ const YOUTUBE_CHANNEL_ID: &str = "UCQDQqA9iaWtlNkwXiCQogYQ";
 
 /* navbar section */
 
-pub const NAV_ITEMS: [nav::NavItem; 1] = [
+pub const NAV_ITEMS: [nav::NavItem; 2] = [
     nav::NavItem {
         route: Route::Home,
         text: "Home",
     },
-    //nav::NavItem {route: Route::About, text: "About",},
+    nav::NavItem { 
+        route: Route::Blog, 
+        text: "Blog",
+    },
     //nav::NavItem {route: Route::Donate, text: "Donate",},
 ];
 

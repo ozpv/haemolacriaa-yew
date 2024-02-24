@@ -6,12 +6,16 @@ mod types;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use pages::{about::About, donate::Donate, home::Home, privacy::Privacy};
+use pages::{about::About, donate::Donate, home::Home, privacy::Privacy, blog::blog::Blog, blog::pagination::Page,};
 
 #[derive(Routable, Debug, Copy, Clone, PartialEq, Eq)]
 pub enum Route {
     #[at("/")]
     Home,
+    #[at("/blog")]
+    Blog,
+    #[at("/blog/:id")]
+    Page { id: u64 },
     #[at("/about")]
     About,
     #[at("/donate")]
@@ -55,6 +59,8 @@ impl Component for App {
 fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! { <Home /> },
+        Route::Blog => html! { <Blog /> },
+        Route::Page { id } => html! { <Page id={id} /> },
         Route::About => html! { <About /> },
         Route::Donate => html! { <Donate /> },
         Route::Privacy => html! { <Privacy /> },
