@@ -5,6 +5,12 @@ use crate::{types::*, Route};
 
 /* info section */
 
+/* copyright info, first year active, to current year */
+pub const YEARS_ACTIVE: [&str; 2] = [
+    "2023",
+    "2024",
+];
+
 /* assumes you have only one, synchronized name */
 const USERNAME: &str = "haemolacriaa";
 
@@ -12,7 +18,7 @@ const USERNAME: &str = "haemolacriaa";
  * ignore tracking info; this is usually presented after the id
  * with a '?'.
  */
-const SPOTIFY_ARTIST_ID: &str = "7xu9uzSauNTYNgHFSAmmi6";
+const SPOTIFY_ARTIST_ID: &str = "4RzQ0uG5y64uVDj7Az5VkN";
 
 /* two url parameters: set the apple music region and id... */
 const APPLE_MUSIC_REGION: &str = "us";

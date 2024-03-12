@@ -20,7 +20,7 @@ pub fn foot() -> Html {
                     </nav>
                 </div>
                 <hr class="my-[16px] border-gray-800 mx-auto w-full md:w-[70%] md:my-[20px]" />
-                <span class="block pb-[20px] justify-center text-center text-xs text-gray-500 font-sans md:pb-[16px]">{"Copyleft (ɔ) 2023-2024 "}
+                <span class="block pb-[20px] justify-center text-center text-xs text-gray-500 font-sans md:pb-[16px]">{format!("Copyleft (ɔ) {}-{} ", config::YEARS_ACTIVE[0], config::YEARS_ACTIVE[1])}
                     <a href={"/"} class="hover:underline hover:text-blue-900">{"haemolacriaa"}</a>{". All Wrongs Reserved."}
                 </span>
             </div>
